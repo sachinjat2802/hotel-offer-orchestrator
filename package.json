@@ -1,0 +1,38 @@
+{
+  "name": "hotel-offer-orchestrator",
+  "version": "1.0.0",
+  "description": "Aggregate overlapping hotel offers from two mock suppliers using Temporal, Redis, and Express",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:worker": "node dist/temporal/worker.js",
+    "dev": "ts-node src/index.ts",
+    "dev:worker": "ts-node src/temporal/worker.ts",
+    "test": "jest --runInBand",
+    "test:manual": "ts-node scripts/manual-test.ts"
+  },
+  "dependencies": {
+    "@temporalio/activity": "^1.11.7",
+    "@temporalio/client": "^1.11.7",
+    "@temporalio/worker": "^1.11.7",
+    "@temporalio/workflow": "^1.11.7",
+    "axios": "^1.7.7",
+    "express": "^4.21.1",
+    "ioredis": "^5.4.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@temporalio/testing": "^1.24.0",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.9.0",
+    "@types/supertest": "^7.2.1",
+    "ioredis-mock": "^8.13.1",
+    "jest": "^30.5.2",
+    "supertest": "^7.3.1",
+    "ts-jest": "^29.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
